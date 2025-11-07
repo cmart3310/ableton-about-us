@@ -1,0 +1,402 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: futura-pt, Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --link-blue: #0000ff;
+    --active-link-orange: #ff764d;
+    --yellow: #fbffa7;
+    --purple: #d5b3ff;
+    --green: #b6ffc0;
+    --light-blue: #b1c5ff;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+.main-page {
+    max-width: 1600px;
+    margin: 0px auto;
+    background-color: white;
+}
+/* Nav Styles */
+
+nav {
+    padding: 20px 40px;
+}
+
+nav a {
+    padding: 0px 10px;
+    margin: 0px 5px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: var(--active-link-orange);
+}
+
+nav a:first-child {
+    padding: 0px 10px 0px 0px;
+    margin: 0px 5px 0px 0px;
+}
+
+nav a:last-child {
+    padding: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 5px;
+}
+
+@media all and (max-width: 1280px) {
+    nav a,
+    nav a:first-child,
+    nav a:last-child {
+        font-size: 14px;
+        margin: 0px;
+    }
+}
+
+/* Nav Styles */
+
+/* Hero Styles */
+
+section {
+    margin: 0vw 8vw 8vw 8vw;    
+    position: relative;
+}
+
+.hero-banner {
+    background-image: url(images/hero-banner-image.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seventh-section .hero-banner {
+    background-image: url(images/person-looking-at-comp.jpg);
+}
+
+/* Hero Styles */
+
+/* Text Styles */
+
+.text-container {
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+.primary-text {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.primary-text a {
+    font-size: inherit;
+    color: var(--link-blue);
+    text-decoration: none;
+}
+
+.secondary-text {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+@media all and (max-width: 1280px) {
+    section:has(.text-container) {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-container {
+        margin: 0px 30px;
+    }
+    
+    .primary-text {
+        font-size: 22px;
+    }
+
+    .secondary-text {
+        font-size: 14px;
+    }
+}
+
+/* Text Styles */
+
+/* Image Column Styles */
+
+.colored-square {
+    max-width: 933px;
+    max-height: 933px;
+    width: 58.33vw;
+    height: 58.33vw;
+    position: absolute;    
+    z-index: 0;
+}
+
+.colored-square.yellow {
+    background-color: var(--yellow);
+}
+
+.colored-square.green {
+    background-color: var(--green);
+}
+
+.colored-square.purple {
+    background-color: var(--purple);
+}
+
+.colored-square.right {
+    right: 0px;
+}
+
+.colored-square.left {
+    left: 0px;
+}
+
+.colored-square.center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-column-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+    z-index: 1;
+    height: 58.33vw;
+    max-height: 933px;
+}
+
+.double-image-column {
+    display: flex;
+    flex-flow: column;
+    gap: 8.33vw;
+    max-width: 533px;
+    max-height: 800px;
+    width: 100%;
+    height: 41vw;
+}
+
+.large-image {
+    max-width: 666px;
+    max-height: 666px;
+    width: 100%;
+    height: 41vw;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.small-image {
+    max-width: 533px;
+    max-height: 400px;
+    width: 100%;
+    height: 25vw;    
+    background-size: cover;
+    background-position: center;    
+    z-index: 1;
+    align-self: center;
+}
+
+/* Image Column Styles */
+
+/* Video Container Styles */
+
+.video-container {
+    height: 25vw;
+    max-width: 800px;
+    max-height: 450px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.video-container img,
+.video-container .video.playing {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    display: block;    
+}
+
+.hidden {
+    display: none !important;
+}
+
+.video-container img {
+    cursor: pointer;
+}
+
+.video-container .play-button {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-color: var(--link-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.video-container .play-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.video-container .video {
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+    display: none;
+}
+
+.video-title {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+}
+
+@media all and (max-width: 1116px) {
+    .video-container {
+        width: 52vw;
+    }
+}
+
+@media all and (max-width: 825px) {
+    .video-container .play-button {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media all and (max-width: 577px) {
+    .video-container .play-button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .video-container .play-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Video Container Styles */
+
+/* Info Section Styles */
+
+.eleventh-section .info-section {
+    background-color: #b1c5ff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-section .left-section {
+    background-image: url(images/walking-hallway-blur.jpg);
+    background-size: cover;
+    background-position: center;
+    max-width: 666px;
+    max-height: 666px;
+    flex: 50%;
+    height: 41vw;
+}
+
+.info-section .right-section {
+    flex: 50%;
+    padding: 0px 8.33vw;
+}
+
+.info-section .right-section h2,
+.info-section .right-section a {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.info-section .right-section a {
+    display: block;
+    text-decoration: none;
+    color: var(--link-blue);
+    margin-top: 30px;
+}
+
+.has-arrow::after {
+    margin-left: 0.1em;
+    transform: rotate(50deg) skew(10deg) translateY(-50%);
+    box-sizing: border-box;
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    content: '';
+    border-style: solid;
+    border-width: 0.09em 0.09em 0 0;    
+}
+
+@media all and (max-width: 1281px) {
+    .eleventh-section .info-section {
+        flex-flow: column;
+    }
+
+    .info-section .left-section {
+        width: 100%;
+        flex: auto;
+        max-width: none;
+        max-height: none;
+    }
+
+    .info-section .right-section {
+        flex: auto;
+        padding: 8.33vw;
+    }   
+}
+
+/* Info Section Styles */
+
+/* Image Column Background Images */
+.third-section-left-image {
+    background-image: url(images/volume-mixer.jpg);
+}
+
+.third-section-right-image {
+    background-image: url(images/walking-hallway-blur.jpg);
+}
+
+.fifth-section-left-image-top {
+    background-image: url(images/person-whiteboard.jpg);
+}
+
+.fifth-section-left-image-bottom {
+    background-image: url(images/brick-wall-sign.jpg);
+}
+
+.fifth-section-right-image {
+    background-image: url(images/two-people-music-room.jpg);
+}
+
+.ninth-section-right-image {
+    background-image: url(images/lecture.jpg);
+}
+
+.ninth-section-left-image {
+    background-image: url(images/classroom\ with\ teacher.jpg);
+}
+/* Image Column Background Images */

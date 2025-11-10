@@ -19,6 +19,14 @@ body {
     background-color: #f3f3f3;
 }
 
+nav {
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+}
+
 .main-page {
     max-width: 1600px;
     margin: 0px auto;
@@ -68,6 +76,10 @@ nav a:last-child {
 section {
     margin: 0vw 8vw 8vw 8vw;    
     position: relative;
+}
+
+section:has(.colored-square) {
+    margin: 0vw 0vw 8vw 0vw;
 }
 
 .hero-banner {
@@ -180,6 +192,7 @@ section {
     z-index: 1;
     height: 58.33vw;
     max-height: 933px;
+    margin: 0vw 8vw;
 }
 
 .double-image-column {
